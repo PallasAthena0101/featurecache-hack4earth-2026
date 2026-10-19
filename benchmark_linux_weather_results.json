@@ -1,0 +1,335 @@
+{
+  "source_url": "https://www.ncei.noaa.gov/data/global-summary-of-the-day/access/2024/72295023174.csv",
+  "dataset_metadata_url": "https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ncdc%3AC00516",
+  "station": "72295023174",
+  "station_name": "LOS ANGELES INTERNATIONAL AIRPORT, CA US",
+  "date_min": "2024-01-01",
+  "date_max": "2024-12-31",
+  "source_sha256": "f800e3819d17d60d495bea3171f4dc1a24e8dcd2b095f4418b2d000c8aabfd7e",
+  "measurement_utc": "2026-10-19T09:19:13.895663+00:00",
+  "python": "3.12.3",
+  "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+  "numpy": "2.4.0",
+  "pandas": "2.3.3",
+  "implementation_sha256": "f2c44902298d7483232c94df81b9ca39b28e7470d35776c9c602b2e3f21a29c8",
+  "benchmark_sha256": "0849f58f3ac70f539db9d8647bf10d836cda9be2b39fa66b0aa2fc7c5341e55c",
+  "limitations": "One real historical station/year; no deployment, energy, carbon, or predictive-quality claim. Network download and one-time input preparation excluded from both timed branches. Each timed branch reads the same prepared CSV.",
+  "workloads": [
+    {
+      "rows": 366,
+      "feature_columns": 7,
+      "windows": [
+        7,
+        30
+      ],
+      "repeats": 15,
+      "cold": {
+        "wall_seconds": 0.008773187175393105,
+        "cpu_seconds": 0.0032095749999999645
+      },
+      "median": {
+        "uncached": {
+          "wall_seconds": 0.0017339619807898998,
+          "cpu_seconds": 0.0017357290000000192
+        },
+        "cached": {
+          "wall_seconds": 0.00069820461794734,
+          "cpu_seconds": 0.0006991670000000005
+        }
+      },
+      "raw_timings": {
+        "uncached": [
+          {
+            "wall_seconds": 0.001877123024314642,
+            "cpu_seconds": 0.0018793360000000092
+          },
+          {
+            "wall_seconds": 0.0021434128284454346,
+            "cpu_seconds": 0.002144564999999987
+          },
+          {
+            "wall_seconds": 0.0018083881586790085,
+            "cpu_seconds": 0.0018101970000000134
+          },
+          {
+            "wall_seconds": 0.0017621289007365704,
+            "cpu_seconds": 0.0017628270000000223
+          },
+          {
+            "wall_seconds": 0.0017053368501365185,
+            "cpu_seconds": 0.00170695500000001
+          },
+          {
+            "wall_seconds": 0.001722055021673441,
+            "cpu_seconds": 0.0017232530000000357
+          },
+          {
+            "wall_seconds": 0.0017800969071686268,
+            "cpu_seconds": 0.0017810919999999841
+          },
+          {
+            "wall_seconds": 0.0017216848209500313,
+            "cpu_seconds": 0.00172280800000002
+          },
+          {
+            "wall_seconds": 0.0017444351688027382,
+            "cpu_seconds": 0.0017457510000000176
+          },
+          {
+            "wall_seconds": 0.0017339619807898998,
+            "cpu_seconds": 0.0017357290000000192
+          },
+          {
+            "wall_seconds": 0.0017134998925030231,
+            "cpu_seconds": 0.0017147310000000249
+          },
+          {
+            "wall_seconds": 0.001739824190735817,
+            "cpu_seconds": 0.001740347000000031
+          },
+          {
+            "wall_seconds": 0.0017113769426941872,
+            "cpu_seconds": 0.0017126169999999719
+          },
+          {
+            "wall_seconds": 0.0017331289127469063,
+            "cpu_seconds": 0.0017342570000000168
+          },
+          {
+            "wall_seconds": 0.001729726791381836,
+            "cpu_seconds": 0.0017308529999999767
+          }
+        ],
+        "cached": [
+          {
+            "wall_seconds": 0.0013271919451653957,
+            "cpu_seconds": 0.001326911999999958
+          },
+          {
+            "wall_seconds": 0.0007506171241402626,
+            "cpu_seconds": 0.0007509940000000048
+          },
+          {
+            "wall_seconds": 0.0007314980030059814,
+            "cpu_seconds": 0.0007323539999999906
+          },
+          {
+            "wall_seconds": 0.0006936239078640938,
+            "cpu_seconds": 0.0006947320000000312
+          },
+          {
+            "wall_seconds": 0.0006910515949130058,
+            "cpu_seconds": 0.0006918579999999896
+          },
+          {
+            "wall_seconds": 0.000671745277941227,
+            "cpu_seconds": 0.0006834410000000068
+          },
+          {
+            "wall_seconds": 0.0006619947962462902,
+            "cpu_seconds": 0.0006628819999999758
+          },
+          {
+            "wall_seconds": 0.0006500608287751675,
+            "cpu_seconds": 0.0006507229999999642
+          },
+          {
+            "wall_seconds": 0.00069820461794734,
+            "cpu_seconds": 0.0006991670000000005
+          },
+          {
+            "wall_seconds": 0.0006621209904551506,
+            "cpu_seconds": 0.0006626029999999838
+          },
+          {
+            "wall_seconds": 0.0007194876670837402,
+            "cpu_seconds": 0.0007203230000000227
+          },
+          {
+            "wall_seconds": 0.0006631501019001007,
+            "cpu_seconds": 0.0006638420000000256
+          },
+          {
+            "wall_seconds": 0.0007436037994921207,
+            "cpu_seconds": 0.0007447480000000173
+          },
+          {
+            "wall_seconds": 0.0007113493047654629,
+            "cpu_seconds": 0.000712119000000011
+          },
+          {
+            "wall_seconds": 0.0007115127518773079,
+            "cpu_seconds": 0.0007122259999999825
+          }
+        ]
+      },
+      "warm_wall_speedup": 2.4834581958045407,
+      "exact_equal_with_nan": true,
+      "cached_branch_computations": 1,
+      "cache_bytes": 21759
+    },
+    {
+      "rows": 366,
+      "feature_columns": 37,
+      "windows": [
+        2,
+        3,
+        4,
+        5,
+        7,
+        10,
+        14,
+        21,
+        28,
+        30,
+        60,
+        90
+      ],
+      "repeats": 15,
+      "cold": {
+        "wall_seconds": 0.017003757879137993,
+        "cpu_seconds": 0.006400445000000032
+      },
+      "median": {
+        "uncached": {
+          "wall_seconds": 0.005955878179520369,
+          "cpu_seconds": 0.005956435000000093
+        },
+        "cached": {
+          "wall_seconds": 0.0012003220617771149,
+          "cpu_seconds": 0.0012014949999999969
+        }
+      },
+      "raw_timings": {
+        "uncached": [
+          {
+            "wall_seconds": 0.005320772062987089,
+            "cpu_seconds": 0.005323025000000037
+          },
+          {
+            "wall_seconds": 0.00836334703490138,
+            "cpu_seconds": 0.008360006999999947
+          },
+          {
+            "wall_seconds": 0.006361265666782856,
+            "cpu_seconds": 0.006362163000000032
+          },
+          {
+            "wall_seconds": 0.007434700150042772,
+            "cpu_seconds": 0.007434684000000025
+          },
+          {
+            "wall_seconds": 0.007457271218299866,
+            "cpu_seconds": 0.007457402000000002
+          },
+          {
+            "wall_seconds": 0.007463492918759584,
+            "cpu_seconds": 0.007463781999999974
+          },
+          {
+            "wall_seconds": 0.004768738057464361,
+            "cpu_seconds": 0.004769263999999995
+          },
+          {
+            "wall_seconds": 0.004760376177728176,
+            "cpu_seconds": 0.004760951000000069
+          },
+          {
+            "wall_seconds": 0.004868424031883478,
+            "cpu_seconds": 0.004869047999999987
+          },
+          {
+            "wall_seconds": 0.006052976939827204,
+            "cpu_seconds": 0.006053582000000057
+          },
+          {
+            "wall_seconds": 0.005955878179520369,
+            "cpu_seconds": 0.005956435000000093
+          },
+          {
+            "wall_seconds": 0.004867871757596731,
+            "cpu_seconds": 0.004867703999999917
+          },
+          {
+            "wall_seconds": 0.004678633064031601,
+            "cpu_seconds": 0.004679837999999936
+          },
+          {
+            "wall_seconds": 0.004806627985090017,
+            "cpu_seconds": 0.004806980999999988
+          },
+          {
+            "wall_seconds": 0.0062639182433485985,
+            "cpu_seconds": 0.006251160999999894
+          }
+        ],
+        "cached": [
+          {
+            "wall_seconds": 0.0017782212235033512,
+            "cpu_seconds": 0.0017788250000000394
+          },
+          {
+            "wall_seconds": 0.001848162617534399,
+            "cpu_seconds": 0.0018483870000000069
+          },
+          {
+            "wall_seconds": 0.0011363476514816284,
+            "cpu_seconds": 0.0011373869999999897
+          },
+          {
+            "wall_seconds": 0.0010395422577857971,
+            "cpu_seconds": 0.0010401859999999985
+          },
+          {
+            "wall_seconds": 0.0015674489550292492,
+            "cpu_seconds": 0.0015680590000000105
+          },
+          {
+            "wall_seconds": 0.001517720054835081,
+            "cpu_seconds": 0.001518121000000039
+          },
+          {
+            "wall_seconds": 0.0010787257924675941,
+            "cpu_seconds": 0.0010792469999999499
+          },
+          {
+            "wall_seconds": 0.0010117017664015293,
+            "cpu_seconds": 0.001012416000000016
+          },
+          {
+            "wall_seconds": 0.0012003220617771149,
+            "cpu_seconds": 0.0012014949999999969
+          },
+          {
+            "wall_seconds": 0.0014949203468859196,
+            "cpu_seconds": 0.0014956319999999135
+          },
+          {
+            "wall_seconds": 0.0011140471324324608,
+            "cpu_seconds": 0.0011148610000000225
+          },
+          {
+            "wall_seconds": 0.0014098701067268848,
+            "cpu_seconds": 0.0014104379999999583
+          },
+          {
+            "wall_seconds": 0.0010534543544054031,
+            "cpu_seconds": 0.001053906999999965
+          },
+          {
+            "wall_seconds": 0.0010075606405735016,
+            "cpu_seconds": 0.0010081559999999268
+          },
+          {
+            "wall_seconds": 0.0016208682209253311,
+            "cpu_seconds": 0.0016216129999999662
+          }
+        ]
+      },
+      "warm_wall_speedup": 4.961900117625516,
+      "exact_equal_with_nan": true,
+      "cached_branch_computations": 1,
+      "cache_bytes": 110706
+    }
+  ]
+}

@@ -3,6 +3,7 @@
   ".gitignore": "0b8998f36697e6f94ef64f5458a113d8176b9cfaaaa1dbe9d3d149be3602853a",
   "benchmark.py": "888fdbbb74cc2dedddf08f1a127e33f5d9b26175dc3173b0551e3fc528102930",
   "benchmark_compressed_v0.json": "fa8e265d7bce7ab4b4aab577dea0d06ef6ff8da9267d3b5bb983e58e4033ba13",
+  "benchmark_linux_weather_results.json": "e57cfb141df99c867e685d80cb486286d9144ea8481f95f8aafe4f89abad4d2d",
   "benchmark_public_weather.py": "0849f58f3ac70f539db9d8647bf10d836cda9be2b39fa66b0aa2fc7c5341e55c",
   "benchmark_public_weather_results.json": "b4b7aa0737d425919cf755afb4f9dd7bb260856cd326868446e973ff0b28187c",
   "benchmark_results.json": "40666fe97c908aff0755e3121618bbcb47d08e825686cef0e54704e10f71a83b",
@@ -12,9 +13,9 @@
   "featurecache.py": "f2c44902298d7483232c94df81b9ca39b28e7470d35776c9c602b2e3f21a29c8",
   "featurecache_cli.py": "f03d98b1d082f784062cb0f3c1201d9ff6e4f7a4c5e3760f59cd89cde582ade1",
   "LICENSE": "78653bd8f05cf4f97df4802a64271ebfc4b28871c74f3ce8faba3cd21f5a7c1c",
-  "README.md": "f84df3f864ba992e24ed200832da039f07a6a5460bd60a14d1277e5f6a96fc70",
+  "README.md": "febba625d54a28d5d8d3532a39e01463f39f949333bd2abc5c21c945605732b5",
   "requirements.txt": "d400734a80ed09000d90321015eb256df9b3e38a0182c891c3f1e6c662c565c2",
-  "SUBMISSION.md": "4ebca4c253e0b4b0fb1f92f31c1a631563826e60e8bea2cb7a87ecb561bdf767",
+  "SUBMISSION.md": "f6b05e37f71661ed6be28bebd244e649e4f560bbe7d8297def9d19e95980dd2f",
   "test_cli.py": "e408d137a95d80734af7afaeab60c53fe97ddd43256af9204d5b47a5160af792",
   "test_featurecache.py": "68317146ba510dbe2623cc0145ac551a694c456abc3d92945ce19d4f424c0c41"
 }

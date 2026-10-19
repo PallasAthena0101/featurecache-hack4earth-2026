@@ -18,6 +18,8 @@ Our first compressed implementation was slower: its cached lookup took 59.91 ms 
 
 A follow-up six-workload matrix spans 5,000–250,000 rows and 7 or 37 features, with nine alternating-order repeats for each workload. Warm speedups were 1.46–2.49x with exact outputs; estimated break-even points were 4–25 total uses after counting cold population. Cache storage ranged from 0.27 to 70.57 MiB. All timings, source hashes and limitations are retained in `benchmark_suite_results.json` and its readable companion report.
 
+An independent Linux cloud replay of the same NOAA input and unchanged scripts passed seven core API tests and produced exact arrays. Across 15 alternating-order repeats, warm speedups were 2.48x (7 columns) and 4.96x (37 columns). Full records are in `benchmark_linux_weather_results.json`. This is a second environment with different hardware and dependencies; it does not isolate an OS effect or replace the Windows 0.93x slowdown. No energy/carbon measurements were added.
+
 ## Reproduce and inspect
 
 A real public-weather check uses 366 daily NOAA GSOD temperature observations from Los Angeles International Airport in 2024. Across 15 alternating-order repeats, validated warm reuse was 0.93x as fast for 7 columns (slower) and 1.68x for 37 columns, with exact equality. Download/preparation time is excluded from both branches. `benchmark_public_weather.py` and `benchmark_public_weather_results.json` retain the source URL, input hash, coverage and raw timings. This is one historical station-year, without an energy or deployment savings claim.

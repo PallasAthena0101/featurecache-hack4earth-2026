@@ -53,6 +53,18 @@ No electricity or carbon measurements were taken. This project makes **no quanti
 
 An additional [real public-weather benchmark](benchmark_public_weather_results.json) uses NOAA GSOD daily temperatures from Los Angeles International Airport during 2024 (366 observations). Fifteen alternating-order repeats found a **0.93x** warm speedup for 7 columns (a slowdown), and **1.68x** for 37 columns. Both outputs matched exactly. This small observed workload demonstrates that cache overhead can outweigh inexpensive transformations. Network download and one-time preparation are excluded from both branches; each timed branch reads the same prepared CSV. Reproduce with `python benchmark_public_weather.py`. The script records the download URL, input checksum, date coverage and full timings; raw observations are not bundled. Dataset description: [NOAA GSOD](https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ncdc%3AC00516).
 
+
+### Independent Linux reproduction
+
+The same NOAA input SHA-256 and unchanged implementation/benchmark scripts were replayed on an existing 4-vCPU Tencent Cloud Ubuntu server (Python 3.12.3, NumPy 2.4.0, pandas 2.3.3). The seven core API tests passed there. Fifteen alternating-order repeats per workload produced exact arrays, including NaNs:
+
+| Environment | 7 columns | 37 columns |
+|---|---:|---:|
+| Windows development machine | 0.93x (slower) | 1.68x |
+| Linux cloud server | 2.48x | 4.96x |
+
+These are separate measurements with different hardware, operating systems and dependencies, not a controlled operating-system comparison. They do not establish that Linux causes the difference or that these speedups generalize. The Windows slowdown remains part of the evidence. Full Linux raw timings, environment versions, input/script hashes and equality checks are in [benchmark_linux_weather_results.json](benchmark_linux_weather_results.json). The three CLI-specific tests were verified on Windows, not rerun in this Linux check. No energy or carbon measurement was added.
+
 ## Reliability and trust boundaries
 
 - Input bytes are read once and hashed; computation uses those same bytes.
