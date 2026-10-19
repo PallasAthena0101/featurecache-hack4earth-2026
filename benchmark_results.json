@@ -1,0 +1,89 @@
+{
+  "rows": 50000,
+  "feature_columns": 37,
+  "repeats": 7,
+  "seed": 20261019,
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26100-SP0",
+  "numpy": "2.4.0",
+  "pandas": "2.3.3",
+  "input_sha256": "2595ee02755dc662e04c43264901dd90d2910c3bf71d411f31483df3a9c4f92b",
+  "exact_equal_with_nan": true,
+  "cold_cache_wall_seconds": 0.09953340000356548,
+  "cold_cache_cpu_seconds": 0.078125,
+  "cached_branch_computations": 1,
+  "raw_timings": {
+    "uncached": [
+      {
+        "wall_seconds": 0.0316778999986127,
+        "cpu_seconds": 0.03125
+      },
+      {
+        "wall_seconds": 0.029884199997468386,
+        "cpu_seconds": 0.03125
+      },
+      {
+        "wall_seconds": 0.028877199998532888,
+        "cpu_seconds": 0.03125
+      },
+      {
+        "wall_seconds": 0.027329499993356876,
+        "cpu_seconds": 0.03125
+      },
+      {
+        "wall_seconds": 0.02958720000606263,
+        "cpu_seconds": 0.015625
+      },
+      {
+        "wall_seconds": 0.030064599995967,
+        "cpu_seconds": 0.03125
+      },
+      {
+        "wall_seconds": 0.03394399999524467,
+        "cpu_seconds": 0.03125
+      }
+    ],
+    "cached": [
+      {
+        "wall_seconds": 0.03789469999901485,
+        "cpu_seconds": 0.015625
+      },
+      {
+        "wall_seconds": 0.020705299997644033,
+        "cpu_seconds": 0.015625
+      },
+      {
+        "wall_seconds": 0.01944329999969341,
+        "cpu_seconds": 0.015625
+      },
+      {
+        "wall_seconds": 0.01919600000110222,
+        "cpu_seconds": 0.03125
+      },
+      {
+        "wall_seconds": 0.020175300000119023,
+        "cpu_seconds": 0.015625
+      },
+      {
+        "wall_seconds": 0.019377499993424863,
+        "cpu_seconds": 0.015625
+      },
+      {
+        "wall_seconds": 0.024791200004983693,
+        "cpu_seconds": 0.03125
+      }
+    ]
+  },
+  "median": {
+    "uncached": {
+      "wall_seconds": 0.029884199997468386,
+      "cpu_seconds": 0.03125
+    },
+    "cached": {
+      "wall_seconds": 0.020175300000119023,
+      "cpu_seconds": 0.015625
+    }
+  },
+  "warm_wall_speedup": 1.4812270448167852,
+  "limitations": "Synthetic numeric CSV; uncompressed-cache reads and hashing included. Higher disk use than compressed storage. No electricity, carbon, or real-world fleet measurement."
+}

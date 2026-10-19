@@ -1,0 +1,15 @@
+{
+  ".gitignore": "0b8998f36697e6f94ef64f5458a113d8176b9cfaaaa1dbe9d3d149be3602853a",
+  "benchmark.py": "888fdbbb74cc2dedddf08f1a127e33f5d9b26175dc3173b0551e3fc528102930",
+  "benchmark_compressed_v0.json": "fa8e265d7bce7ab4b4aab577dea0d06ef6ff8da9267d3b5bb983e58e4033ba13",
+  "benchmark_results.json": "40666fe97c908aff0755e3121618bbcb47d08e825686cef0e54704e10f71a83b",
+  "benchmark_suite.py": "667b5052cb6906fef247460e85835aaa381f017989476f9385ab8bf101464a54",
+  "benchmark_suite_results.json": "da6c29dc3f515f309e475d40f863d0e73668fe1abc4215f8fb5a0101926bcb9c",
+  "benchmark_suite_results.md": "6143a92bbbd565610e3714f6e289cae3f2e3892ac0fa9e9645b4c9bb9156f022",
+  "featurecache.py": "f2c44902298d7483232c94df81b9ca39b28e7470d35776c9c602b2e3f21a29c8",
+  "LICENSE": "78653bd8f05cf4f97df4802a64271ebfc4b28871c74f3ce8faba3cd21f5a7c1c",
+  "README.md": "1c0cd10b58407782cbb49eb764e746a4928c39831aa03eb76a86409d3dd48454",
+  "requirements.txt": "d400734a80ed09000d90321015eb256df9b3e38a0182c891c3f1e6c662c565c2",
+  "SUBMISSION.md": "b7373b1d13b0082b478d1295b9e2d258247bfc8c54912fb9cbc69ed523b46d71",
+  "test_featurecache.py": "68317146ba510dbe2623cc0145ac551a694c456abc3d92945ce19d4f424c0c41"
+}

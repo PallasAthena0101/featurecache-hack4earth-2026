@@ -1,0 +1,840 @@
+{
+  "seed": 20261019,
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26100-SP0",
+  "numpy": "2.4.0",
+  "pandas": "2.3.3",
+  "implementation_sha256": "f2c44902298d7483232c94df81b9ca39b28e7470d35776c9c602b2e3f21a29c8",
+  "benchmark_sha256": "667b5052cb6906fef247460e85835aaa381f017989476f9385ab8bf101464a54",
+  "limitations": "Warm local filesystem; synthetic single-column data; no energy/carbon measurements; break-even is estimated from measured medians, not an observed deployment.",
+  "workloads": [
+    {
+      "rows": 5000,
+      "windows": [
+        24,
+        168
+      ],
+      "feature_columns": 7,
+      "repeats": 9,
+      "input_sha256": "a82508834cd1f51b9ef9ad1a8a35debfdd77baf16e1b8af488ae7c79d83c6ea6",
+      "exact_equal_with_nan": true,
+      "cached_branch_computations": 1,
+      "cold": {
+        "wall_seconds": 0.020287499999994907,
+        "cpu_seconds": 0.0
+      },
+      "median": {
+        "uncached": {
+          "wall_seconds": 0.0023783999999977823,
+          "cpu_seconds": 0.0
+        },
+        "cached": {
+          "wall_seconds": 0.0016259999999874708,
+          "cpu_seconds": 0.0
+        }
+      },
+      "raw_timings": {
+        "uncached": [
+          {
+            "wall_seconds": 0.0028004999999211577,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.002935299999990093,
+            "cpu_seconds": 0.015625
+          },
+          {
+            "wall_seconds": 0.0023823000001357286,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.00228730000003452,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.002189700000144512,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.0022835999998278567,
+            "cpu_seconds": 0.015625
+          },
+          {
+            "wall_seconds": 0.0021807999999055028,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.002709600000116552,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.0023783999999977823,
+            "cpu_seconds": 0.0
+          }
+        ],
+        "cached": [
+          {
+            "wall_seconds": 0.019917000000077678,
+            "cpu_seconds": 0.015625
+          },
+          {
+            "wall_seconds": 0.0016259999999874708,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.0016026000000692875,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.0013550999999552005,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.0015409999998610147,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.0012830999999096093,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.002435000000104992,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.0018806999999014806,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.0016453000000637985,
+            "cpu_seconds": 0.015625
+          }
+        ]
+      },
+      "cache_bytes": 281287,
+      "warm_wall_speedup": 1.4627306273161802,
+      "estimated_break_even_total_uses": 25,
+      "estimated_wall_for_total_uses": {
+        "1": {
+          "recompute": 0.0023783999999977823,
+          "cache": 0.020287499999994907
+        },
+        "2": {
+          "recompute": 0.004756799999995565,
+          "cache": 0.021913499999982378
+        },
+        "5": {
+          "recompute": 0.011891999999988911,
+          "cache": 0.02679149999994479
+        },
+        "10": {
+          "recompute": 0.023783999999977823,
+          "cache": 0.034921499999882144
+        },
+        "20": {
+          "recompute": 0.047567999999955646,
+          "cache": 0.05118149999975685
+        },
+        "50": {
+          "recompute": 0.11891999999988911,
+          "cache": 0.09996149999938098
+        }
+      }
+    },
+    {
+      "rows": 5000,
+      "windows": [
+        4,
+        8,
+        16,
+        24,
+        32,
+        48,
+        64,
+        96,
+        128,
+        192,
+        256,
+        512
+      ],
+      "feature_columns": 37,
+      "repeats": 9,
+      "input_sha256": "a82508834cd1f51b9ef9ad1a8a35debfdd77baf16e1b8af488ae7c79d83c6ea6",
+      "exact_equal_with_nan": true,
+      "cached_branch_computations": 1,
+      "cold": {
+        "wall_seconds": 0.02710639999986597,
+        "cpu_seconds": 0.03125
+      },
+      "median": {
+        "uncached": {
+          "wall_seconds": 0.005784499999890613,
+          "cpu_seconds": 0.0
+        },
+        "cached": {
+          "wall_seconds": 0.003418200000169236,
+          "cpu_seconds": 0.0
+        }
+      },
+      "raw_timings": {
+        "uncached": [
+          {
+            "wall_seconds": 0.006136900000001333,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.005498999999872467,
+            "cpu_seconds": 0.015625
+          },
+          {
+            "wall_seconds": 0.005296199999975215,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.005784499999890613,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.0056615000000874716,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.0055370000000039,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.005936100000099032,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.006550000000061118,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.00807289999988825,
+            "cpu_seconds": 0.0
+          }
+        ],
+        "cached": [
+          {
+            "wall_seconds": 0.011002100000041537,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.0036506999999801337,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.003982499999892752,
+            "cpu_seconds": 0.015625
+          },
+          {
+            "wall_seconds": 0.003418200000169236,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.003211299999975381,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.0031970000000001164,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.003106800000068688,
+            "cpu_seconds": 0.015625
+          },
+          {
+            "wall_seconds": 0.0038003000001936016,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.0033660999999938213,
+            "cpu_seconds": 0.015625
+          }
+        ]
+      },
+      "cache_bytes": 1482519,
+      "warm_wall_speedup": 1.6922649346451997,
+      "estimated_break_even_total_uses": 11,
+      "estimated_wall_for_total_uses": {
+        "1": {
+          "recompute": 0.005784499999890613,
+          "cache": 0.02710639999986597
+        },
+        "2": {
+          "recompute": 0.011568999999781227,
+          "cache": 0.030524600000035207
+        },
+        "5": {
+          "recompute": 0.028922499999453066,
+          "cache": 0.040779200000542914
+        },
+        "10": {
+          "recompute": 0.05784499999890613,
+          "cache": 0.057870200001389094
+        },
+        "20": {
+          "recompute": 0.11568999999781227,
+          "cache": 0.09205220000308145
+        },
+        "50": {
+          "recompute": 0.28922499999453066,
+          "cache": 0.19459820000815853
+        }
+      }
+    },
+    {
+      "rows": 50000,
+      "windows": [
+        24,
+        168
+      ],
+      "feature_columns": 7,
+      "repeats": 9,
+      "input_sha256": "2595ee02755dc662e04c43264901dd90d2910c3bf71d411f31483df3a9c4f92b",
+      "exact_equal_with_nan": true,
+      "cached_branch_computations": 1,
+      "cold": {
+        "wall_seconds": 0.044111100000009174,
+        "cpu_seconds": 0.03125
+      },
+      "median": {
+        "uncached": {
+          "wall_seconds": 0.013143399999989924,
+          "cpu_seconds": 0.015625
+        },
+        "cached": {
+          "wall_seconds": 0.00595019999991564,
+          "cpu_seconds": 0.0
+        }
+      },
+      "raw_timings": {
+        "uncached": [
+          {
+            "wall_seconds": 0.011864599999853453,
+            "cpu_seconds": 0.015625
+          },
+          {
+            "wall_seconds": 0.013143399999989924,
+            "cpu_seconds": 0.015625
+          },
+          {
+            "wall_seconds": 0.012347099999942657,
+            "cpu_seconds": 0.015625
+          },
+          {
+            "wall_seconds": 0.012925900000027468,
+            "cpu_seconds": 0.015625
+          },
+          {
+            "wall_seconds": 0.013649199999917982,
+            "cpu_seconds": 0.015625
+          },
+          {
+            "wall_seconds": 0.012035199999900215,
+            "cpu_seconds": 0.015625
+          },
+          {
+            "wall_seconds": 0.01571870000020681,
+            "cpu_seconds": 0.015625
+          },
+          {
+            "wall_seconds": 0.013448499999867636,
+            "cpu_seconds": 0.015625
+          },
+          {
+            "wall_seconds": 0.020469900000080088,
+            "cpu_seconds": 0.015625
+          }
+        ],
+        "cached": [
+          {
+            "wall_seconds": 0.01519759999996495,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.005732000000080006,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.00570160000006581,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.007729299999937211,
+            "cpu_seconds": 0.015625
+          },
+          {
+            "wall_seconds": 0.00595019999991564,
+            "cpu_seconds": 0.015625
+          },
+          {
+            "wall_seconds": 0.00551299999983712,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.0056629000000611995,
+            "cpu_seconds": 0.0
+          },
+          {
+            "wall_seconds": 0.007124100000055478,
+            "cpu_seconds": 0.015625
+          },
+          {
+            "wall_seconds": 0.006858999999849402,
+            "cpu_seconds": 0.0
+          }
+        ]
+      },
+      "cache_bytes": 2801288,
+      "warm_wall_speedup": 2.208900541187904,
+      "estimated_break_even_total_uses": 6,
+      "estimated_wall_for_total_uses": {
+        "1": {
+          "recompute": 0.013143399999989924,
+          "cache": 0.044111100000009174
+        },
+        "2": {
+          "recompute": 0.02628679999997985,
+          "cache": 0.05006129999992481
+        },
+        "5": {
+          "recompute": 0.06571699999994962,
+          "cache": 0.06791189999967173
+        },
+        "10": {
+          "recompute": 0.13143399999989924,
+          "cache": 0.09766289999924993
+        },
+        "20": {
+          "recompute": 0.2628679999997985,
+          "cache": 0.15716489999840633
+        },
+        "50": {
+          "recompute": 0.6571699999994962,
+          "cache": 0.3356708999958755
+        }
+      }
+    },
+    {
+      "rows": 50000,
+      "windows": [
+        4,
+        8,
+        16,
+        24,
+        32,
+        48,
+        64,
+        96,
+        128,
+        192,
+        256,
+        512
+      ],
+      "feature_columns": 37,
+      "repeats": 9,
+      "input_sha256": "2595ee02755dc662e04c43264901dd90d2910c3bf71d411f31483df3a9c4f92b",
+      "exact_equal_with_nan": true,
+      "cached_branch_computations": 1,
+      "cold": {
+        "wall_seconds": 0.08993280000004233,
+        "cpu_seconds": 0.0625
+      },
+      "median": {
+        "uncached": {
+          "wall_seconds": 0.03048310000008314,
+          "cpu_seconds": 0.03125
+        },
+        "cached": {
+          "wall_seconds": 0.01978279999980259,
+          "cpu_seconds": 0.015625
+        }
+      },
+      "raw_timings": {
+        "uncached": [
+          {
+            "wall_seconds": 0.031023600000025908,
+            "cpu_seconds": 0.03125
+          },
+          {
+            "wall_seconds": 0.03357469999991736,
+            "cpu_seconds": 0.03125
+          },
+          {
+            "wall_seconds": 0.03160370000000512,
+            "cpu_seconds": 0.03125
+          },
+          {
+            "wall_seconds": 0.028297300000076575,
+            "cpu_seconds": 0.03125
+          },
+          {
+            "wall_seconds": 0.029244199999993725,
+            "cpu_seconds": 0.03125
+          },
+          {
+            "wall_seconds": 0.030892400000084308,
+            "cpu_seconds": 0.03125
+          },
+          {
+            "wall_seconds": 0.03048310000008314,
+            "cpu_seconds": 0.03125
+          },
+          {
+            "wall_seconds": 0.029769699999860677,
+            "cpu_seconds": 0.015625
+          },
+          {
+            "wall_seconds": 0.026995499999884487,
+            "cpu_seconds": 0.015625
+          }
+        ],
+        "cached": [
+          {
+            "wall_seconds": 0.029178000000001703,
+            "cpu_seconds": 0.015625
+          },
+          {
+            "wall_seconds": 0.020614000000023225,
+            "cpu_seconds": 0.03125
+          },
+          {
+            "wall_seconds": 0.019273999999995794,
+            "cpu_seconds": 0.03125
+          },
+          {
+            "wall_seconds": 0.018857799999977942,
+            "cpu_seconds": 0.015625
+          },
+          {
+            "wall_seconds": 0.02156379999996716,
+            "cpu_seconds": 0.03125
+          },
+          {
+            "wall_seconds": 0.019709299999931318,
+            "cpu_seconds": 0.015625
+          },
+          {
+            "wall_seconds": 0.020481000000017957,
+            "cpu_seconds": 0.015625
+          },
+          {
+            "wall_seconds": 0.01978279999980259,
+            "cpu_seconds": 0.015625
+          },
+          {
+            "wall_seconds": 0.01925929999993059,
+            "cpu_seconds": 0.015625
+          }
+        ]
+      },
+      "cache_bytes": 14802520,
+      "warm_wall_speedup": 1.5408890551583863,
+      "estimated_break_even_total_uses": 7,
+      "estimated_wall_for_total_uses": {
+        "1": {
+          "recompute": 0.03048310000008314,
+          "cache": 0.08993280000004233
+        },
+        "2": {
+          "recompute": 0.06096620000016628,
+          "cache": 0.10971559999984493
+        },
+        "5": {
+          "recompute": 0.1524155000004157,
+          "cache": 0.1690639999992527
+        },
+        "10": {
+          "recompute": 0.3048310000008314,
+          "cache": 0.26797799999826566
+        },
+        "20": {
+          "recompute": 0.6096620000016628,
+          "cache": 0.4658059999962916
+        },
+        "50": {
+          "recompute": 1.524155000004157,
+          "cache": 1.0592899999903693
+        }
+      }
+    },
+    {
+      "rows": 250000,
+      "windows": [
+        24,
+        168
+      ],
+      "feature_columns": 7,
+      "repeats": 9,
+      "input_sha256": "62673671f4ae90787218782e286aeab4f79f0a1ce3a6c36744807dfd8f303a68",
+      "exact_equal_with_nan": true,
+      "cached_branch_computations": 1,
+      "cold": {
+        "wall_seconds": 0.12920349999990322,
+        "cpu_seconds": 0.078125
+      },
+      "median": {
+        "uncached": {
+          "wall_seconds": 0.05387539999992441,
+          "cpu_seconds": 0.0625
+        },
+        "cached": {
+          "wall_seconds": 0.021622900000011214,
+          "cpu_seconds": 0.015625
+        }
+      },
+      "raw_timings": {
+        "uncached": [
+          {
+            "wall_seconds": 0.05359309999994366,
+            "cpu_seconds": 0.0625
+          },
+          {
+            "wall_seconds": 0.06096069999989595,
+            "cpu_seconds": 0.0625
+          },
+          {
+            "wall_seconds": 0.05408739999984391,
+            "cpu_seconds": 0.0625
+          },
+          {
+            "wall_seconds": 0.05743960000017978,
+            "cpu_seconds": 0.0625
+          },
+          {
+            "wall_seconds": 0.05387539999992441,
+            "cpu_seconds": 0.0625
+          },
+          {
+            "wall_seconds": 0.06358709999994971,
+            "cpu_seconds": 0.0625
+          },
+          {
+            "wall_seconds": 0.052088400000002366,
+            "cpu_seconds": 0.03125
+          },
+          {
+            "wall_seconds": 0.05374419999998281,
+            "cpu_seconds": 0.046875
+          },
+          {
+            "wall_seconds": 0.05309910000005402,
+            "cpu_seconds": 0.046875
+          }
+        ],
+        "cached": [
+          {
+            "wall_seconds": 0.031768100000135746,
+            "cpu_seconds": 0.015625
+          },
+          {
+            "wall_seconds": 0.021331999999802065,
+            "cpu_seconds": 0.015625
+          },
+          {
+            "wall_seconds": 0.022755699999834178,
+            "cpu_seconds": 0.03125
+          },
+          {
+            "wall_seconds": 0.020727500000020882,
+            "cpu_seconds": 0.015625
+          },
+          {
+            "wall_seconds": 0.022148299999798837,
+            "cpu_seconds": 0.03125
+          },
+          {
+            "wall_seconds": 0.02271029999997154,
+            "cpu_seconds": 0.015625
+          },
+          {
+            "wall_seconds": 0.021622900000011214,
+            "cpu_seconds": 0.015625
+          },
+          {
+            "wall_seconds": 0.019874699999945733,
+            "cpu_seconds": 0.03125
+          },
+          {
+            "wall_seconds": 0.020328400000153124,
+            "cpu_seconds": 0.03125
+          }
+        ]
+      },
+      "cache_bytes": 14001289,
+      "warm_wall_speedup": 2.49158993474032,
+      "estimated_break_even_total_uses": 4,
+      "estimated_wall_for_total_uses": {
+        "1": {
+          "recompute": 0.05387539999992441,
+          "cache": 0.12920349999990322
+        },
+        "2": {
+          "recompute": 0.10775079999984882,
+          "cache": 0.15082639999991443
+        },
+        "5": {
+          "recompute": 0.26937699999962206,
+          "cache": 0.21569509999994807
+        },
+        "10": {
+          "recompute": 0.5387539999992441,
+          "cache": 0.32380960000000414
+        },
+        "20": {
+          "recompute": 1.0775079999984882,
+          "cache": 0.5400386000001163
+        },
+        "50": {
+          "recompute": 2.6937699999962206,
+          "cache": 1.1887256000004527
+        }
+      }
+    },
+    {
+      "rows": 250000,
+      "windows": [
+        4,
+        8,
+        16,
+        24,
+        32,
+        48,
+        64,
+        96,
+        128,
+        192,
+        256,
+        512
+      ],
+      "feature_columns": 37,
+      "repeats": 9,
+      "input_sha256": "62673671f4ae90787218782e286aeab4f79f0a1ce3a6c36744807dfd8f303a68",
+      "exact_equal_with_nan": true,
+      "cached_branch_computations": 1,
+      "cold": {
+        "wall_seconds": 0.35636440000007497,
+        "cpu_seconds": 0.28125
+      },
+      "median": {
+        "uncached": {
+          "wall_seconds": 0.16281849999995757,
+          "cpu_seconds": 0.15625
+        },
+        "cached": {
+          "wall_seconds": 0.09290890000011132,
+          "cpu_seconds": 0.09375
+        }
+      },
+      "raw_timings": {
+        "uncached": [
+          {
+            "wall_seconds": 0.17996880000009696,
+            "cpu_seconds": 0.171875
+          },
+          {
+            "wall_seconds": 0.16281849999995757,
+            "cpu_seconds": 0.15625
+          },
+          {
+            "wall_seconds": 0.1631079999999656,
+            "cpu_seconds": 0.15625
+          },
+          {
+            "wall_seconds": 0.1557161000000633,
+            "cpu_seconds": 0.15625
+          },
+          {
+            "wall_seconds": 0.1615139000000454,
+            "cpu_seconds": 0.171875
+          },
+          {
+            "wall_seconds": 0.15690509999990354,
+            "cpu_seconds": 0.15625
+          },
+          {
+            "wall_seconds": 0.15519150000000081,
+            "cpu_seconds": 0.140625
+          },
+          {
+            "wall_seconds": 0.16292479999992793,
+            "cpu_seconds": 0.15625
+          },
+          {
+            "wall_seconds": 0.16768240000010337,
+            "cpu_seconds": 0.15625
+          }
+        ],
+        "cached": [
+          {
+            "wall_seconds": 0.10685940000007577,
+            "cpu_seconds": 0.078125
+          },
+          {
+            "wall_seconds": 0.09546499999987645,
+            "cpu_seconds": 0.09375
+          },
+          {
+            "wall_seconds": 0.10239700000010998,
+            "cpu_seconds": 0.109375
+          },
+          {
+            "wall_seconds": 0.08899220000012065,
+            "cpu_seconds": 0.078125
+          },
+          {
+            "wall_seconds": 0.09406189999981507,
+            "cpu_seconds": 0.09375
+          },
+          {
+            "wall_seconds": 0.09290890000011132,
+            "cpu_seconds": 0.09375
+          },
+          {
+            "wall_seconds": 0.09131669999987935,
+            "cpu_seconds": 0.09375
+          },
+          {
+            "wall_seconds": 0.09181189999981143,
+            "cpu_seconds": 0.09375
+          },
+          {
+            "wall_seconds": 0.08849309999982324,
+            "cpu_seconds": 0.09375
+          }
+        ]
+      },
+      "cache_bytes": 74002521,
+      "warm_wall_speedup": 1.7524532095392635,
+      "estimated_break_even_total_uses": 4,
+      "estimated_wall_for_total_uses": {
+        "1": {
+          "recompute": 0.16281849999995757,
+          "cache": 0.35636440000007497
+        },
+        "2": {
+          "recompute": 0.32563699999991513,
+          "cache": 0.4492733000001863
+        },
+        "5": {
+          "recompute": 0.8140924999997878,
+          "cache": 0.7280000000005202
+        },
+        "10": {
+          "recompute": 1.6281849999995757,
+          "cache": 1.1925445000010768
+        },
+        "20": {
+          "recompute": 3.2563699999991513,
+          "cache": 2.12163350000219
+        },
+        "50": {
+          "recompute": 8.140924999997878,
+          "cache": 4.9089005000055295
+        }
+      }
+    }
+  ]
+}
