@@ -51,6 +51,8 @@ The follow-up [workload matrix](benchmark_suite_results.md) measures six workloa
 
 No electricity or carbon measurements were taken. This project makes **no quantified energy, carbon or deployment-wide savings claim**. The evidence supports a runtime improvement for this workload and reuse of one computed matrix across the measured cache accesses.
 
+An additional [real public-weather benchmark](benchmark_public_weather_results.json) uses NOAA GSOD daily temperatures from Los Angeles International Airport during 2024 (366 observations). Fifteen alternating-order repeats found a **0.93x** warm speedup for 7 columns (a slowdown), and **1.68x** for 37 columns. Both outputs matched exactly. This small observed workload demonstrates that cache overhead can outweigh inexpensive transformations. Network download and one-time preparation are excluded from both branches; each timed branch reads the same prepared CSV. Reproduce with `python benchmark_public_weather.py`. The script records the download URL, input checksum, date coverage and full timings; raw observations are not bundled. Dataset description: [NOAA GSOD](https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ncdc%3AC00516).
+
 ## Reliability and trust boundaries
 
 - Input bytes are read once and hashed; computation uses those same bytes.

@@ -20,6 +20,8 @@ A follow-up six-workload matrix spans 5,000–250,000 rows and 7 or 37 features,
 
 ## Reproduce and inspect
 
+A real public-weather check uses 366 daily NOAA GSOD temperature observations from Los Angeles International Airport in 2024. Across 15 alternating-order repeats, validated warm reuse was 0.93x as fast for 7 columns (slower) and 1.68x for 37 columns, with exact equality. Download/preparation time is excluded from both branches. `benchmark_public_weather.py` and `benchmark_public_weather_results.json` retain the source URL, input hash, coverage and raw timings. This is one historical station-year, without an energy or deployment savings claim.
+
 Install `requirements.txt`, run `python -m unittest -v`, then `python benchmark.py` and `python benchmark_suite.py`. The README gives an API example and documents workload, failure and security limits. Core license: MIT.
 
 **Public source repository:** https://github.com/PallasAthena0101/featurecache-hack4earth-2026
