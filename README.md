@@ -20,6 +20,15 @@ values, columns, info = features('sensor.csv', 'value', [4, 24, 168], '.feature-
 print(info)  # computed=True on miss; computed=False on validated hit
 ```
 
+The command-line interface can also reuse features and export a numeric NPZ file:
+
+```sh
+python featurecache_cli.py sensor.csv --column value --windows 4 24 168 --cache .feature-cache --output features.npz
+python featurecache_cli.py sensor.csv --column value --windows 4 24 168 --cache .feature-cache
+```
+
+The second command reports a validated cache hit. Export is optional, never overwrites an existing file, and must point outside the cache directory. Load exports with `numpy.load('features.npz', allow_pickle=False)`; `values` contains the matrix and `columns` its column names.
+
 The input must have a finite numeric column, and its rows must already be in the desired time order. The tool preserves row order. Rolling means, standard deviations and lagged differences use the current or earlier rows; they never use future rows. It does not validate timestamps, infer sampling frequency or establish a safe target-label validation gap.
 
 ## Measurement
@@ -53,7 +62,7 @@ No electricity or carbon measurements were taken. This project makes **no quanti
 
 The cache directory is trusted local storage. Checksums detect accidental corruption; they do not authenticate a maliciously replaced manifest and payload. A shared untrusted cache needs authentication and stronger isolation. Local filesystem rename/locking guarantees are assumed; this is not yet a distributed or network-filesystem cache. Old replaced payloads and interrupted orphan payloads are retained; production deployments need garbage collection and storage quotas. Files are flushed, but directory-entry durability across power loss depends on the filesystem.
 
-Seven tests cover reuse, parameter/input invalidation, corruption recovery, interrupted manifests, path traversal, concurrent writers and independence of earlier features from later input changes. These are prototype checks, not a security certification.
+Ten tests cover reuse, parameter/input invalidation, corruption recovery, interrupted manifests, path traversal, concurrent writers, independence of earlier features from later input changes, CLI exports and overwrite protection. These are prototype checks, not a security certification.
 
 ## Scope and provenance
 

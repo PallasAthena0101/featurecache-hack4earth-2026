@@ -12,7 +12,7 @@ FeatureCache computes causal rolling features from a numeric CSV column and stor
 
 ## Evidence
 
-Seven automated tests pass, including input/parameter invalidation, concurrent writers and corruption/interruption recovery. A reproducible 50,000-row, 37-column synthetic benchmark produced exactly equal arrays. Across seven alternating-order repeats, warm lookup took a median 20.18 ms versus 29.88 ms for recomputation, approximately 1.48x faster. Initial population cost 99.53 ms and must be amortized. Full timings and environment versions are in `benchmark_results.json`.
+Ten automated tests pass, including input/parameter invalidation, concurrent writers, corruption/interruption recovery and command-line export protections. The API and CLI both reuse the same cache implementation. A reproducible 50,000-row, 37-column synthetic benchmark produced exactly equal arrays. Across seven alternating-order repeats, warm lookup took a median 20.18 ms versus 29.88 ms for recomputation, approximately 1.48x faster. Initial population cost 99.53 ms and must be amortized. Full timings and environment versions are in `benchmark_results.json`.
 
 Our first compressed implementation was slower: its cached lookup took 59.91 ms versus 32.00 ms for recomputation in that experiment. We retained that negative result and switched to uncompressed payloads. The improvement comes with additional disk use. We measured runtime and CPU time, not energy or carbon emissions, and do not claim measured carbon savings.
 
