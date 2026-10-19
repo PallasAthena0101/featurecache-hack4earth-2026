@@ -65,6 +65,19 @@ The same NOAA input SHA-256 and unchanged implementation/benchmark scripts were 
 
 These are separate measurements with different hardware, operating systems and dependencies, not a controlled operating-system comparison. They do not establish that Linux causes the difference or that these speedups generalize. The Windows slowdown remains part of the evidence. Full Linux raw timings, environment versions, input/script hashes and equality checks are in [benchmark_linux_weather_results.json](benchmark_linux_weather_results.json). The three CLI-specific tests were verified on Windows, not rerun in this Linux check. No energy or carbon measurement was added.
 
+## Cache storage maintenance
+
+`cache_maintenance.py` previews cleanup by default. It removes old unreferenced payloads, and can evict committed entries in oldest-manifest order toward a best-effort size limit:
+
+```sh
+python cache_maintenance.py .feature-cache --max-bytes 104857600
+python cache_maintenance.py .feature-cache --max-bytes 104857600 --apply
+```
+
+The default minimum age is one hour. Recent files, busy writer keys, symlinks and unknown files are preserved. Applying a plan acquires the existing per-key lock and rechecks file metadata and the committed manifest; a payload that became current after preview is preserved. An evicted entry is recomputed on its next use. Readers already in flight may encounter a cache miss and recompute. This is oldest-manifest eviction, not LRU, and not a strict quota: inspect `target_met` and `skipped_keys`. Only recognized manifest/payload bytes count toward the target. Abandoned locks and temporary files still require an operator workflow.
+
+All 18 API, CLI and maintenance tests pass on Windows and the existing Linux cloud server, with no skipped tests. Eight maintenance tests cover preview-only behavior, orphan cleanup, capacity eviction and exact recomputation, active writers, recent entries, path protection, manifest changes under lock, symlinks and invalid limits. Source hashes and Linux verification are retained in `maintenance_linux_verification.json`. The core cache implementation is unchanged; previous benchmark timings were not rerun for this addition. No new runtime, energy or carbon saving is claimed.
+
 ## Reliability and trust boundaries
 
 - Input bytes are read once and hashed; computation uses those same bytes.
@@ -74,9 +87,9 @@ These are separate measurements with different hardware, operating systems and d
 - Readers verify the payload checksum and numeric schema, reject path traversal, and use `allow_pickle=False`.
 - Corrupt or interrupted entries are recomputed. A crashed writer may leave an abandoned lock; timeout raises an explicit error rather than silently breaking another writer's lock.
 
-The cache directory is trusted local storage. Checksums detect accidental corruption; they do not authenticate a maliciously replaced manifest and payload. A shared untrusted cache needs authentication and stronger isolation. Local filesystem rename/locking guarantees are assumed; this is not yet a distributed or network-filesystem cache. Old replaced payloads and interrupted orphan payloads are retained; production deployments need garbage collection and storage quotas. Files are flushed, but directory-entry durability across power loss depends on the filesystem.
+The cache directory is trusted local storage. Checksums detect accidental corruption; they do not authenticate a maliciously replaced manifest and payload. A shared untrusted cache needs authentication and stronger isolation. Local filesystem rename/locking guarantees are assumed; this is not yet a distributed or network-filesystem cache. The optional maintenance command reclaims old payloads and evicts entries toward a best-effort capacity; strict quotas, stale-lock recovery and temporary-file cleanup remain outside this prototype. Files are flushed, but directory-entry durability across power loss depends on the filesystem.
 
-Ten tests cover reuse, parameter/input invalidation, corruption recovery, interrupted manifests, path traversal, concurrent writers, independence of earlier features from later input changes, CLI exports and overwrite protection. These are prototype checks, not a security certification.
+Eighteen tests cover reuse, parameter/input invalidation, corruption recovery, interrupted manifests, path traversal, concurrent writers, independence of earlier features from later input changes, CLI exports and overwrite protection. These are prototype checks, not a security certification.
 
 ## Scope and provenance
 

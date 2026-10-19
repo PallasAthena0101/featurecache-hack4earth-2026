@@ -1,0 +1,18 @@
+{
+  "utc": "2026-10-19T15:46:16.396956+00:00",
+  "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+  "python": "3.12.3",
+  "tests_run": 18,
+  "tests_passed": true,
+  "tests_skipped": 0,
+  "source_hashes": {
+    "featurecache.py": "f2c44902298d7483232c94df81b9ca39b28e7470d35776c9c602b2e3f21a29c8",
+    "featurecache_cli.py": "f03d98b1d082f784062cb0f3c1201d9ff6e4f7a4c5e3760f59cd89cde582ade1",
+    "test_featurecache.py": "68317146ba510dbe2623cc0145ac551a694c456abc3d92945ce19d4f424c0c41",
+    "test_cli.py": "e408d137a95d80734af7afaeab60c53fe97ddd43256af9204d5b47a5160af792",
+    "cache_maintenance.py": "bda0534958b475c112314924a7cd80bbfae1c62d18b17335345416fae2fe2b87",
+    "test_cache_maintenance.py": "8116f9ab99a907df6fd612c0e437172718abb92b21cf937ca6cd653e78f054cb"
+  },
+  "benchmarks_rerun": false,
+  "core_implementation_unchanged": true
+}
