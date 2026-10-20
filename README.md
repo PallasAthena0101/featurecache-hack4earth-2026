@@ -65,6 +65,18 @@ The same NOAA input SHA-256 and unchanged implementation/benchmark scripts were 
 
 These are separate measurements with different hardware, operating systems and dependencies, not a controlled operating-system comparison. They do not establish that Linux causes the difference or that these speedups generalize. The Windows slowdown remains part of the evidence. Full Linux raw timings, environment versions, input/script hashes and equality checks are in [benchmark_linux_weather_results.json](benchmark_linux_weather_results.json). The three CLI-specific tests were verified on Windows, not rerun in this Linux check. No energy or carbon measurement was added.
 
+## Complete lifecycle and opting out
+
+The [cold-to-finish lifecycle benchmark](benchmark_lifecycle_results.md) includes first population, input changes and capacity cleanup, rather than timing only an existing warm entry. On the existing Linux server, all three 25,000-row/37-feature traces were slower with caching: recompute/cache wall ratios were **0.784x** (one input repeated 36 times), **0.363x** (mixed hot/new inputs) and **0.291x** (all unique). Six fresh-cache trials per trace retained every slowdown; all 1,296 outputs matched. Cleanup ran after every cached request with a 32 MiB best-effort budget. These results describe that configuration, not every workload; they do not imply energy or carbon savings.
+
+The CLI now accepts an explicit bypass for work that does not benefit from caching:
+
+```sh
+python featurecache_cli.py sensor.csv --column value --windows 4 24 168 --no-cache --output uncached_features.npz
+```
+
+Choose either `--cache DIR` or `--no-cache`. Bypass preserves input validation and safe numeric export without reading or writing cache entries. It does not automatically predict whether caching will help. Twenty tests pass on Windows and Linux; the additional checks compare bypass/cached outputs and protect the input file. Earlier benchmark and maintenance evidence remains intact.
+
 ## Cache storage maintenance
 
 `cache_maintenance.py` previews cleanup by default. It removes old unreferenced payloads, and can evict committed entries in oldest-manifest order toward a best-effort size limit:
@@ -89,10 +101,10 @@ All 18 API, CLI and maintenance tests pass on Windows and the existing Linux clo
 
 The cache directory is trusted local storage. Checksums detect accidental corruption; they do not authenticate a maliciously replaced manifest and payload. A shared untrusted cache needs authentication and stronger isolation. Local filesystem rename/locking guarantees are assumed; this is not yet a distributed or network-filesystem cache. The optional maintenance command reclaims old payloads and evicts entries toward a best-effort capacity; strict quotas, stale-lock recovery and temporary-file cleanup remain outside this prototype. Files are flushed, but directory-entry durability across power loss depends on the filesystem.
 
-Eighteen tests cover reuse, parameter/input invalidation, corruption recovery, interrupted manifests, path traversal, concurrent writers, independence of earlier features from later input changes, CLI exports and overwrite protection. These are prototype checks, not a security certification.
+Twenty tests cover reuse, parameter/input invalidation, corruption recovery, interrupted manifests, path traversal, concurrent writers, independence of earlier features from later input changes, CLI exports and overwrite protection. These are prototype checks, not a security certification.
 
 ## Scope and provenance
 
-All core code, tests, benchmark and documentation in this directory were created on 19 October 2026. NumPy and pandas are existing dependencies, not our inventions. No competition-protected data or credentials are included. Benchmark input is synthetic and reproducible. AI assistance was used to implement and document the prototype.
+The original core and benchmarks were created on 19 October 2026; lifecycle measurements and the CLI bypass were added on 20 October 2026. NumPy and pandas are existing dependencies, not our inventions. No competition-protected data or credentials are included. Benchmark input is synthetic and reproducible. AI assistance was used to implement and document the prototype.
 
 License: MIT. See `LICENSE`. Public source: https://github.com/PallasAthena0101/featurecache-hack4earth-2026. The local `SUBMISSION.md` is the hackathon write-up draft; repository publication is separate from Kaggle competition submission.

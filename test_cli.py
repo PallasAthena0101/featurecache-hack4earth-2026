@@ -44,6 +44,34 @@ class CommandLineTests(unittest.TestCase):
             main(self.args + ['--output', str(self.root / 'cache' / 'entry.npz')])
         self.assertFalse((self.root / 'cache').exists())
 
+    def test_bypass_matches_cached_export_without_cache_artifacts(self):
+        cached = self.root / 'cached.npz'
+        bypassed = self.root / 'bypassed.npz'
+        with redirect_stdout(StringIO()):
+            main(self.args + ['--output', str(cached)])
+        cache_snapshot = {p.name: p.read_bytes() for p in (self.root / 'cache').iterdir()}
+        result = StringIO()
+        with redirect_stdout(result):
+            main(self.args[:-2] + ['--no-cache', '--output', str(bypassed)])
+        report = json.loads(result.getvalue())
+        self.assertEqual(report['status'], 'bypassed')
+        self.assertTrue(report['computed'])
+        with np.load(cached, allow_pickle=False) as a, np.load(bypassed, allow_pickle=False) as b:
+            np.testing.assert_equal(a['values'], b['values'])
+            np.testing.assert_array_equal(a['columns'], b['columns'])
+        self.assertEqual(cache_snapshot, {p.name: p.read_bytes() for p in (self.root / 'cache').iterdir()})
+        self.assertEqual({p.name for p in self.root.iterdir()}, {'sensor.csv', 'cache', 'cached.npz', 'bypassed.npz'})
+
+    def test_bypass_rejects_invalid_windows_and_input_overwrite(self):
+        for windows in [['1'], ['2', '2']]:
+            with redirect_stderr(StringIO()), self.assertRaises(SystemExit):
+                main([str(self.source), '--column', 'value', '--windows', *windows, '--no-cache'])
+        original = self.source.read_bytes()
+        with redirect_stderr(StringIO()), self.assertRaises(SystemExit):
+            main(self.args[:-2] + ['--no-cache', '--output', str(self.source)])
+        self.assertEqual(self.source.read_bytes(), original)
+        self.assertEqual({p.name for p in self.root.iterdir()}, {'sensor.csv'})
+
 
 if __name__ == '__main__':
     unittest.main()
