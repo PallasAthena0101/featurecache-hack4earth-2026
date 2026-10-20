@@ -77,6 +77,8 @@ python featurecache_cli.py sensor.csv --column value --windows 4 24 168 --no-cac
 
 Choose either `--cache DIR` or `--no-cache`. Bypass preserves input validation and safe numeric export without reading or writing cache entries. It does not automatically predict whether caching will help. Twenty tests pass on Windows and Linux; the additional checks compare bypass/cached outputs and protect the input file. Earlier benchmark and maintenance evidence remains intact.
 
+A separate [paired checksum experiment](experiments/checksum_blake2b256/README.md) tested BLAKE2b-256 without skipping payload verification. It improved the cloud SHA-256 comparison by 1.05–1.21x, but slowed all three Windows traces and remained slower than uncached recomputation on both hosts. We rejected replacing the default. The isolated experimental sources, fixed protocol, all 108 trial records (3,888 requests across two hosts), and verification receipts are included; the main implementation remains unchanged. These measurements do not establish energy or carbon savings.
+
 ## Cache storage maintenance
 
 `cache_maintenance.py` previews cleanup by default. It removes old unreferenced payloads, and can evict committed entries in oldest-manifest order toward a best-effort size limit:

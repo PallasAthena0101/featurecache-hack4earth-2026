@@ -1,0 +1,16 @@
+{
+  "utc": "2026-10-20T03:23:04.279302+00:00",
+  "passed": true,
+  "service": "MainPID=0\nResult=success\nExecMainStatus=0\nActiveState=inactive\n",
+  "source_and_frozen_protocol_verified": true,
+  "unchanged_tests_passed": 20,
+  "generated_inputs_independently_verified": 36,
+  "trials": 54,
+  "requests": 1944,
+  "fifo_accounting_and_summary_independently_verified": true,
+  "all_arrays_checked_by_source_verified_benchmark": true,
+  "eligible_for_integration_review": true,
+  "automatic_publication": false,
+  "results_sha256": "5cac4364e599084a68ae2164fc1cc7db92472ae55b476aad516ee137df9af952",
+  "caveat": "One cloud host and synthetic traces; timing not independently rerun. All traces retained. No energy or carbon claim; public implementation not changed."
+}

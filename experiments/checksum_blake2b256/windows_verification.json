@@ -1,0 +1,16 @@
+{
+  "utc": "2026-10-20T03:31:59.100171+00:00",
+  "passed": true,
+  "service": "Windows benchmark session17477 exited0; 20 local tests passed before execution",
+  "source_and_frozen_protocol_verified": true,
+  "unchanged_tests_passed": 20,
+  "generated_inputs_independently_verified": 36,
+  "trials": 54,
+  "requests": 1944,
+  "fifo_accounting_and_summary_independently_verified": true,
+  "all_arrays_checked_by_source_verified_benchmark": true,
+  "eligible_for_integration_review": false,
+  "automatic_publication": false,
+  "results_sha256": "4d04b8344be89791b741745d961c452d4dbfe302b4adbc489037a406f68ad408",
+  "caveat": "One Windows host and synthetic traces; timing not independently rerun. Cross-host results are not a controlled OS comparison. All traces retained. No energy or carbon claim; public implementation not changed."
+}
